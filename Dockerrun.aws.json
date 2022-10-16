@@ -4,27 +4,31 @@
     "containerDefinitions": [
         {
             "name": "client",
-            "image": "{$AWS_ACCOUNT_ID}.dkr.ecr.{$AWS_DEFAULT_REGION}.amazonaws.com/client",
+            "image": "251517171182.dkr.ecr.us-east-1.amazonaws.com/client",
             "hostname": "client",
-            "essential": false
+            "essential": false,
+            "memory": 128
         },
         {
             "name": "server",
-            "image": "{$AWS_ACCOUNT_ID}.dkr.ecr.{$AWS_DEFAULT_REGION}.amazonaws.com/server",
+            "image": "251517171182.dkr.ecr.us-east-1.amazonaws.com/server",
             "hostname": "api",
-            "essential": false
+            "essential": false,
+            "memory": 128
         },
         {
             "name": "worker",
-            "image": "{$AWS_ACCOUNT_ID}.dkr.ecr.{$AWS_DEFAULT_REGION}.amazonaws.com/worker",
+            "image": "251517171182.dkr.ecr.us-east-1.amazonaws.com/worker",
             "hostname": "worker",
-            "essential": false
+            "essential": false,
+            "memory": 128
         },
         {
             "name": "nginx",
-            "image": "{$AWS_ACCOUNT_ID}.dkr.ecr.{$AWS_DEFAULT_REGION}.amazonaws.com/nginx",
+            "image": "251517171182.dkr.ecr.us-east-1.amazonaws.com/nginx",
             "hostname": "nginx",
             "essential": true,
+            "memory": 128,
             "links": ["client", "server"],
             "portMappings": [
                 {
